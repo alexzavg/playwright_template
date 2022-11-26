@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-
+import { color } from '../helpers/common.helper';
 
 test('expect each tour list item to have "View Tour" button', async ({ page }) => {
 
@@ -20,14 +20,14 @@ test('expect each tour list item to have "View Tour" button', async ({ page }) =
 
   // get length of tour list items
   const tourListItemsLength = tourListItems.length;
-  console.log(tourListItemsLength);
+  console.log(`Total amount of tours found: ${tourListItemsLength}`);
 
   // expect each tour list item to have "View Tour" button
   for (let i = 0; i < tourListItemsLength; i++) {
     const tourListItem = tourListItems[i];
     const viewTourButton = await tourListItem.$('text="View Tour"');
     expect(viewTourButton).toBeTruthy();
-    console.log(`${viewTourButton} ${i} is true`);
+    console.log(color.success(`\nButton `) + color.info(`[View Tour] `) + color.success(`is visible inside tour block `) + color.info(i));
   };
   
 });
