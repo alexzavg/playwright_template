@@ -1,0 +1,16 @@
+{
+  "name": "playwright_templates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --config=chrome.playwright.config.ts --project=template"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.28.1",
+    "prettyjson": "^1.2.5"
+  }
+}
